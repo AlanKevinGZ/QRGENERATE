@@ -1,0 +1,99 @@
+
+
+<!-- Upload  -->
+<form id="file-upload-form" class="uploader">
+  <input id="file-upload" type="file" name="fileUpload" accept=".xls,.xlsx" 
+  (change)="fileUp($event)"
+  />
+
+  <label for="file-upload" id="file-drag">
+    <img id="file-image" src="#" alt="Preview" class="hidden">
+    <div id="start">
+      <i class="fa fa-download" aria-hidden="true"></i>
+      <div>Selecciona el archivo excel</div>
+      
+      <span id="file-upload-btn" class="btn btn-primary">Seleciona El archivo</span>
+    </div>
+    <div id="response" class="hidden">
+      <div id="messages"></div>
+      <progress class="progress" id="file-progress" value="0">
+        <span>0</span>%
+      </progress>
+    </div>
+  </label>
+</form>
+
+
+<!--   <ngx-qrcode *ngFor="let item of  arrDatos"
+  value="ID: {{item.ID}} Nombre: {{item.NOMBRE}}
+  Fecha:{{item.FECHA}}  CODIGO:{{item.CODIGO}}"
+  cssClass="aClass"
+  [width]="width"
+  [scale]="height"
+  [errorCorrectionLevel]="errorCorrectionValue"
+  
+>
+</ngx-qrcode> -->
+
+<!-- 
+<div class="container contendo_qr">
+  <p *ngFor="let item of arrDatos" >ID: {{item.ID}} Nombre: {{item.NOMBRE}}
+    Fecha:{{item.FECHA}} 
+   
+      <ngx-qrcode 
+      value="ID: {{item.ID}} Nombre: {{item.NOMBRE}}
+      Fecha:{{item.FECHA}}  CODIGO:{{item.CODIGO}}"
+      cssClass="aClass"
+      [width]="width"
+      [scale]="height"
+      [errorCorrectionLevel]="errorCorrectionValue"
+      
+    >
+    </ngx-qrcode>
+    
+  </p>
+
+
+</div> -->
+
+
+
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Telfono</th>
+      <th scope="col">Codigo</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr *ngFor="let item of arrDatos; let i=index">
+      <th scope="row">{{item.ID}}</th>
+      <td>{{item.NOMBRE}}</td>
+      <td>{{item.EMIAL}}</td>
+      <td>{{item.TEL}}</td>
+      <td>
+        <ngx-qrcode 
+        value=
+        "
+        ID: {{item.ID}} 
+        Nombre: {{item.NOMBRE}}
+        Correo:{{item.EMIAL}}  
+        Telefono:{{item.TEL}} 
+        CODIGO:{{i+1 }}
+        "
+        cssClass="aClass"
+        [width]="width"
+        [scale]="height"
+        [errorCorrectionLevel]="errorCorrectionValue"
+        
+      >
+      </ngx-qrcode>
+      </td>
+    </tr>
+  </tbody>
+</table>
