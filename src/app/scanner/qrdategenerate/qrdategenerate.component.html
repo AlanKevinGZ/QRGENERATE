@@ -1,43 +1,36 @@
 
-<p>Generar Codigo Qr Datos Personales</p>
+<p>Generar Codigo Qr de Datos Personales</p>
 
 <form action="" (submit)="agregar($event)">
   <label for="">Nombre</label>
-    <input type="text" placeholder="valor" [(ngModel)]="nombre"  
-     name="nombre" >
+  <input type="text" placeholder="valor" [(ngModel)]="nombre" name="nombre">
 
-     <label for="">Edad</label>
-    <input type="number" placeholder="valor" [(ngModel)]="edad" name="edad">
+  <label for="">Edad</label>
+  <input type="number" placeholder="valor" [(ngModel)]="edad" name="edad">
 
-    <label for="">Correo</label>
-    <input type="email" placeholder="valor" [(ngModel)]="email"
-      name="email" >
+  <label for="">Correo</label>
+  <input type="email" placeholder="valor" [(ngModel)]="email" name="email">
 
-      <label for="">Telefono</label>
-      <input type="tel" placeholder="valor" [(ngModel)]="telfono"
-       name="telefono"> 
+  <label for="">Telefono</label>
+  <input type="number" placeholder="valor" [(ngModel)]="telfono" name="telefono">
 
-    <input type="submit" value="Crear" 
-    >
+  <input type="submit" value="Crear">
 </form>
-
 
 <div class="codigo">
   <ngx-qrcode
-  [value]="value"
-  cssClass="aClass"
-  [width]="width"
-  [scale]="height"
-  [errorCorrectionLevel]="errorCorrectionValue"
-  
->
-</ngx-qrcode>
+    [value]="value"
+    cssClass="aClass"
+    [width]="width"
+    [scale]="height"
+    [errorCorrectionLevel]="errorCorrectionValue">
+  </ngx-qrcode>
+  <div class="datos" *ngIf="bandera">
+    <p>Nombre: {{nombre}}  </p>
+    <p>Edad: {{edad}}  </p>
+    <p>Email: {{email}}  </p>
+    <p>telefono: {{telfono}}  </p>
+  </div>
+</div>
 
-<div class="datos" *ngIf="bandera">
-  <p>Nombre: {{nombre}}  </p>
-  <p>Edad: {{edad}}  </p>
-  <p>Email: {{email}}  </p>
-  <p>telefono: {{telfono}}  </p>
-</div>
-</div>
 

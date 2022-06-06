@@ -5,9 +5,9 @@ import { QrdategenerateComponent } from './scanner/qrdategenerate/qrdategenerate
 import { HomePageComponent } from './scanner/home-page/home-page.component';
 
 const routes: Routes = [
-  { path:'', component:HomePageComponent  },
-  { path:'date', component:QrdategenerateComponent},
-  { path:'excel', component:GenerateqrComponent},
+  { path:'', component:HomePageComponent},
+  { path:'Date', component:QrdategenerateComponent},
+  { path:'Excel', component:GenerateqrComponent},
 ];
 
 @NgModule({

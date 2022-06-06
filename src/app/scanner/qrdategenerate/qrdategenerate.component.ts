@@ -7,20 +7,19 @@ import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiedi
   styleUrls: ['./qrdategenerate.component.scss']
 })
 export class QrdategenerateComponent implements OnInit {
-  
+
   errorCorrectionValue=NgxQrcodeErrorCorrectionLevels.HIGH;
   value='';
   width = 2;
   height = 2;
 
-  nombre:string='';
-  edad:string='';
-  email:string='';
-  telfono:string='';
+  nombre='';
+  edad='';
+  email='';
+  telfono='';
 
   bandera:boolean=false;
-
-  resultado:string='';
+  resultado='';
 
   constructor() { }
 
@@ -33,9 +32,7 @@ export class QrdategenerateComponent implements OnInit {
     console.log(this.valor); */
     this.resultado=`Nombre:${this.nombre}\nEdad:${this.edad}\nemail:${this.email}\nTelefono:${this.telfono}`
     this.value=this.resultado;
-    
     this.bandera=true;
-    
   }
 
 }
